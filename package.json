@@ -1,0 +1,30 @@
+{
+  "name": "d_eval",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/firebase": "^7.5.0",
+    "core-js": "^3.9.1",
+    "firebase": "^8.3.1",
+    "nuxt": "^2.15.3",
+    "vue-good-table": "^2.21.9",
+    "vue-json-to-csv": "^1.1.8",
+    "vue-select": "^3.11.2",
+    "vuefire": "^3.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/tailwindcss": "^4.0.1",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.8",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass-loader": "^11.0.1"
+  }
+}
