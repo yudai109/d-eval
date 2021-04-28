@@ -39,7 +39,7 @@ export default {
 <style scoped>
 
     .bottomNav {
-      height: 70px;
+      height: 80px;
     }
 
     i {

@@ -16,8 +16,13 @@ async function getSkpData() {
     const LOGIN_PASS_SELECTOR = 'input[name=SMPPASSWORD]';
     const LOGIN_SUBMIT_SELECTOR = 'input[type=submit]';
     
+
+    // 日付取得
+    var today = new Date()
+    var year = today.getFullYear()
+    var month = today.getMonth() + 1
     // 検索条件
-    var S_DATE = "2021年4月"
+    var S_DATE = `${year}年${month}月`
     var S_AREA = "関西"
     var S_SHOP = "ドコモショップ"
     const TOUROKU_DATE = 'input[name="10714_10869296_1"]';

@@ -37,20 +37,20 @@ export default {
                 title: "分析",
                 icon: "fa fa-chart-bar",
                 },
-                {
-                href: "/test",
-                title: "理解度テスト",
-                icon: "fa fa-tasks",
-                },
+                // {
+                // href: "/test",
+                // title: "理解度テスト",
+                // icon: "fa fa-tasks",
+                // },
                 {
                 href: "/export",
-                title: "csvエクスポート",
+                title: "スカパーCSV",
                 icon: "fa fa-file-csv",
                 },
                 {
-                href: "/scrape",
-                title: "スクレイピング",
-                icon: "fa fa-file-csv",
+                href: "/shopInfo",
+                title: "ショップ情報",
+                icon: "fa fa-cog",
                 },
                 {
                 href: "/account",

@@ -13,7 +13,7 @@
                     Overview
                 </h6>
                 <h2 class="text-white text-xl font-semibold">
-                    Sales value
+                    獲得率推移
                 </h2>
                 </div>
             </div>
@@ -50,16 +50,16 @@ export default {
             type: "line",
             data: {
             labels: [
-                "PI",
-                "HS/タブ",
-                "マイグレ",
-                "総販",
-                "dカード",
-                "ドコモ光",
-                "ISP付帯",
-                "TVOP付帯",
-                "SKP顧客",
-                "SKPIC",
+                "4月",
+                "5月",
+                "6月",
+                "7月",
+                "8月",
+                "9月",
+                "10月",
+                "11月",
+                "12月",
+                "1月",
             ],
             datasets: [
                 {

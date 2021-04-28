@@ -9,14 +9,21 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/firebase": "^7.5.0",
-    "core-js": "^3.9.1",
+    "@nuxtjs/proxy": "^2.1.0",
+    "core-js": "^2.6.11",
     "firebase": "^8.3.1",
     "nuxt": "^2.15.3",
+    "stylus": "^0.54.8",
+    "vue-ctk-date-time-picker": "^2.5.0",
     "vue-good-table": "^2.21.9",
+    "vue-js-modal": "^2.0.0-rc.6",
     "vue-json-to-csv": "^1.1.8",
     "vue-select": "^3.11.2",
-    "vuefire": "^3.0.0-alpha.2"
+    "vue-tailwind-picker": "^2.0.0",
+    "vuefire": "^3.0.0-alpha.2",
+    "vuejs-datepicker": "^1.6.2"
   },
   "devDependencies": {
     "@nuxtjs/pwa": "^3.3.5",

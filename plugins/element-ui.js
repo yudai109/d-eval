@@ -15,7 +15,8 @@ import 'vue-select/dist/vue-select.css';
     import VueGoodTablePlugin from 'vue-good-table';
     // import the styles
     import 'vue-good-table/dist/vue-good-table.css'
-
+    
+// vueCtkDateTimePicker
 
 
 Vue.use(ElementUI, { locale })

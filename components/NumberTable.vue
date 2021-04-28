@@ -46,7 +46,7 @@
                     PI販売数
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ pi_count }} 
+                    {{ pi_kojin }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     マイグレ販売数
@@ -60,7 +60,7 @@
                     HS/タブ新規件数
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ hs_count }}
+                    {{ hs_kojin }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     319
@@ -74,7 +74,7 @@
                     マイグレ販売数
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ migration_count }}
+                    {{ migration_kojin }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     294
@@ -88,7 +88,7 @@
                     スマタブ総販数
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ st_total_count }}
+                    {{ st_total_kojin }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     147
@@ -98,9 +98,9 @@
                     </td>
                 </tr>
                 <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                    dカード総数
+                    dカードGOLD総数
                     </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ dcard_count }}
+                    {{ dcard_gold_kojin }}
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     190
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
@@ -108,9 +108,9 @@
                     </td>
                 </tr>
                 <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                    ドコモ光総数
+                    dカードレギュラー総数
                     </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ hikari_count }}
+                    {{ dcard_regu_kojin }}
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     190
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
@@ -118,9 +118,39 @@
                     </td>
                 </tr>
                 <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                    ISP販売数
+                    ドコモ光新規
                     </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ isp_count }}
+                    {{ hikari_kojin }}
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    190
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                    46,53%
+                    </td>
+                </tr>
+                <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                    ドコモ光転用
+                    </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {{ hikari_tenyo_kojin }}
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    190
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                    46,53%
+                    </td>
+                </tr>
+                <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                    ドコモ光事業者変更
+                    </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {{ hikari_henko_kojin }}
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    190
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                    46,53%
+                    </td>
+                </tr>
+                <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                    OCN
+                    </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {{ hikari_ocn_kojin }}
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     190
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
@@ -130,7 +160,7 @@
                 <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                     TVOP販売数
                     </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ tvop_count }}
+                    {{ tvop_kojin }}
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     190
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
@@ -140,7 +170,7 @@
                 <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                     SKP販売数 顧客
                     </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ skp_cs_count }}
+                    {{ skp_cs_kojin }}
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     190
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
@@ -150,13 +180,24 @@
                 <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                     SKP販売数 IC
                     </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {{ skp_pi_count }}
+                    {{ skp_ic_kojin }}
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     190
                     </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
                     46,53%
                     </td>
                 </tr>
+                <tr> <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                    スカパー工事
+                    </th> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {{ sj_kouji_kojin }}
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    190
+                    </td> <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"> <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                    46,53%
+                    </td>
+                </tr>
+
                 </tbody>
             </table>
             </div>
@@ -173,16 +214,21 @@ export default {
         return {
             negotiation_count: 0,
             customer_count: 0,
-            hs_count: 0,
-            pi_count: 0,
-            migration_count: 0,
-            st_total_count: 0,
-            dcard_count: 0,
-            hikari_count: 0,
-            isp_count: 0,
-            tvop_count: 0,
-            skp_cs_count: 0,
-            skp_pi_count: 0,
+            hs_kojin: 0,
+            pi_kojin: 0,
+            migration_kojin: 0,
+            st_total_kojin: 0,
+            dcard_gold_kojin: 0,
+            dcard_regu_kojin: 0,
+            hikari_kojin: 0,
+            hikari_tenyo_kojin: 0,
+            hikari_henko_kojin: 0,
+            hikari_ocn_kojin: 0,
+            tvop_kojin: 0,
+            skp_cs_kojin: 0,
+            skp_ic_kojin: 0,
+            sj_kouji_kojin: 0,
+            kojin_data: [],
         }
     },
     methods: {
@@ -193,27 +239,28 @@ export default {
 
             preformance_col.orderBy("createdAt", "desc").limit(1).get().then((qs) => {
                 qs.forEach((doc) => {
-                        self.negotiation_count =  doc.data().negotiation
-                        self.customer_count =  doc.data().customer
-                        self.hs_count =  doc.data().hs
-                        self.pi_count =  doc.data().pi
-                        self.migration_count =  doc.data().migration
-                        self.st_total_count =  doc.data().st_total
-                        self.dcard_count =  doc.data().dcard
-                        self.hikari_count =  doc.data().hikari
-                        self.isp_count =  doc.data().isp
-                        self.tvop_count =  doc.data().tvop
-                        self.skp_cs_count =  doc.data().skp_cs
-                        self.skp_pi_count =  doc.data().skp_pi
-                    })
+                    self.negotiation_count =  doc.data().negotiation
+                    self.customer_count =  doc.data().customer
+                    self.hs_kojin =  doc.data().hs_kojin
+                    self.pi_kojin =  doc.data().pi_kojin
+                    self.migration_kojin =  doc.data().migration_kojin
+                    self.st_total_kojin =  doc.data().st_total_kojin
+                    self.dcard_gold_kojin =  doc.data().dcard_gold_kojin
+                    self.dcard_regu_kojin =  doc.data().dcard_regu_kojin
+                    self.hikari_kojin =  doc.data().hikari_kojin
+                    self.hikari_tenyo_kojin =  doc.data().hikari_tenyo_kojin
+                    self.hikari_henko_kojin =  doc.data().hikari_henko_kojin
+                    self.hikari_ocn_kojin =  doc.data().hikari_ocn_kojin
+                    self.tvop_kojin =  doc.data().tvop
+                    self.skp_cs_kojin =  doc.data().skp_cs
+                    self.skp_ic_kojin =  doc.data().skp_ic
+                    self.sj_kouji_kojin =  doc.data().sj_kouji
+                })
             })
         }
     },
     mounted() {
-        this.setDefault();
+        this.setDefault()
     }
 }
 </script>
-<style lang="">
-    
-</style>
