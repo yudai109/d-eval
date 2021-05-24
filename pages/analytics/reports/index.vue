@@ -2,20 +2,15 @@
   <div>
     <div class="mt-10">
       <h2 class="uppercase font-bold text-2xl mb-6 pb-6 border-b-2">
-        ショップ目標値
+        ドコモ｜実績　報告内容
       </h2>
+    <Tabs />
     </div>
     <VueJsonToCsv :json-data="json_data" :labels="labels">
       <button @click="download" class="rounded-lg bg-blue-400 py-2 px-3 my-5">
         <b class="text-white">csvダウンロード</b>
       </button>
     </VueJsonToCsv>
-    <button
-      @click.once="setRepoData"
-      class="rounded-lg bg-blue-400 py-2 px-3 my-5"
-    >
-      <b class="text-white">shop</b>
-    </button>
 
     <div class="w-11/12 mx-auto mb-20">
       <vue-good-table
@@ -58,97 +53,12 @@
       </vue-good-table>
     </div>
 
-    <modal name="modal-content" height="auto">
-      <h2 class="text-gray-600 font-semibold text-lg my-2">
-        {{ edit_data.shopname }}
-      </h2>
-      <table class="mx-auto">
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="shop">店舗名</td>
-          <td>
-            <input
-              id="shop"
-              type="text"
-              class="border rounded py-1 pl-2"
-              v-model="edit_data.shop"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="attend">
-            訪問先
-          </td>
-          <td>
-            <input
-              id="attend"
-              type="text"
-              class="border rounded py-1 pl-2"
-              v-model="edit_data.attend"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="skp_type">
-            手段
-          </td>
-          <td>
-            <input
-              id="skp_type"
-              type="text"
-              class="border rounded py-1 pl-2"
-              v-model="edit_data.skp_type"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="smtab">
-            活動内容
-          </td>
-          <td>
-            <textarea name="" id="smtab" cols="50" rows="4" class="border rounded py-1 pl-2" v-model="edit_data.activity_repo"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="dcard_gold">
-            所感
-          </td>
-          <td>
-            <textarea name="" id="smtab" cols="50" rows="4" class="border rounded py-1 pl-2" v-model="edit_data.impression_repo"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="dcard_regu">
-            要望など
-          </td>
-          <td>
-            <textarea name="" id="smtab" cols="50" rows="4" class="border rounded py-1 pl-2" v-model="edit_data.request_repo"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td class="pr-2 py-2 font-semibold text-gray-600" for="hikari_shimki">
-            競合情報
-          </td>
-          <td>
-            <textarea name="" id="smtab" cols="50" rows="4" class="border rounded py-1 pl-2" v-model="edit_data.conflict_repo"></textarea>
-          </td>
-        </tr>
-      </table>
-      <button
-        @click="edit_comit"
-        class="rounded-lg bg-red-400 text-white font-semibold py-2 px-6 my-2"
-      >
-        編集確定
-      </button>
-    </modal>
   </div>
 </template>
 
 <script>
 // import Vue from 'vue'
 import VueJsonToCsv from "vue-json-to-csv"; // eslint-disable-line
-import { firestore } from "~/plugins/firebase.js";
-import { auth } from "~/plugins/firebase.js";
-
 export default {
   name: "CsvDownload",
   data() {
@@ -165,130 +75,108 @@ export default {
           label: "店舗名",
         },
         {
-          field: "attend",
-          label: "訪問先",
+          field: "username",
+          label: "名前",
         },
         {
-          field: "skp_type",
-          label: "手段",
+          field: "negotiation",
+          label: "商談数",
         },
         {
-          field: "activity_repo",
-          label: "活動内容",
+          field: "customer",
+          label: "接客数",
         },
         {
-          field: "impression_repo",
-          label: "所感",
+          field: "hs",
+          label: "HS",
         },
         {
-          field: "request_repo",
-          label: "要望など",
+          field: "pi",
+          label: "PI",
         },
         {
-          field: "conflict_repo",
-          label: "競合情報",
+          field: "migration",
+          label: "マイグレ",
         },
         {
-          field: "edit",
-          label: "編集",
+          field: "st_total",
+          label: "スマタブ総販",
         },
+        {
+          field: "dcard_regu",
+          label: "レギュラー",
+        },
+        {
+          field: "dcard_gold",
+          label: "ゴールド",
+        },
+        {
+          field: "hikari_shinki",
+          label: "光新規",
+        },
+        {
+            field: "hikari_henko",
+            label: "事業者変更",
+        },
+        {
+            field: "hikari_tenyo",
+            label: "転用",
+        },
+        {
+            field: "isp",
+            label: "OCN",
+        },
+        {
+            field: "tvop",
+            label: "TVOP",
+        },
+        {
+            field: "skp_cs",
+            label: "スカパー顧客",
+        },
+        {
+            field: "skp_ic",
+            label: "スカパーIC",
+        },
+        {
+            field: "skp_koji",
+            label: "スカパー工事",
+        },
+
       ],
       rows: [],
-      edit_data: {
-        shop: "",
-        attend: "",
-        skp_type: "",
-        username: "",
-        activity_repo: "",
-        impression_repo: "",
-        request_repo: "",
-        conflict_repo: "",
-      },
+
     };
   },
   components: {
     VueJsonToCsv,
   },
   methods: {
-    setRepoData() {
-    //   var today = new Date();
-    //   var year = today.getFullYear();
-    //   var month = today.getMonth() + 1;
-
-        var self = this;
-      var current_user = auth().currentUser;
-      var skp_repo_col = firestore().doc(
-        `users/${current_user.uid}/skp_repo/${self.edit_data.doc_id}`
-      );
-
-    skp_repo_col.update({
-            shop: self.edit_data.shop,
-            attend: self.edit_data.attend,
-            skp_type: self.edit_data.skp_type,
-            username: self.edit_data.username,
-            activity_repo: self.edit_data.activity_repo,
-            impression_repo: self.edit_data.impression_repo,
-            request_repo: self.edit_data.request_repo,
-            conflict_repo: self.edit_data.conflict_repo,
-        })
-        .then(() => {
-          console.log("Document successfully written!");
-        })
-        .catch((error) => {
-          console.error("Error writing document: ", error);
-        });
-    },
-
-    show() {
-      this.$modal.show("modal-content");
-    },
-
-    hide() {
-      this.$modal.hide("modal-content");
-    },
-
-    editRow(row) {
-        (this.edit_data.doc_id = row.doc_id),
-        (this.edit_data.shop = row.shop),
-        (this.edit_data.attend = row.attend),
-        (this.edit_data.skp_type = row.skp_type),
-        (this.edit_data.username = row.username),
-        (this.edit_data.activity_repo = row.activity_repo),
-        (this.edit_data.impression_repo = row.impression_repo),
-        (this.edit_data.request_repo = row.request_repo),
-        (this.edit_data.conflict_repo = row.conflict_repo),
-        console.log(this.edit_data.doc_id, "EDIT");
-      this.show();
-    },
-
-    edit_comit() {
-      var yesno = confirm("本当に編集しますか？");
-
-      if (yesno) {
-        //   ※※※※ここ書き換える
-        this.$store.commit("editRepoData", this.edit_data);
-        this.setRepoData(this.edit_data);
-      }
-      this.hide();
-      this.getReportData();
-      // 配列更新 強制発火
-      this.rows.splice();
-    },
-    
     getReportData() {
-      this.rows = this.$store.state.reports;
+        this.rows = this.$store.state.docomo_reports;
     },
     download() {
       // ラベル
       this.labels = {
         createdAt: { title: "報告日" },
-        shop: { title: "ショップ名" },
-        attend: { title: "訪問先" },
-        skp_type: { title: "手段" },
-        activity_repo: { title: "活動内容" },
-        impression_repo: { title: "所感" },
-        request_repo: { title: "要望" },
-        conflict_repo: { title: "競合情報" },
+        shop: { title: "店舗名" },
+        username: { title: "名前" },
+        negotiation: { title: "商談数" },
+        customer: { title: "接客数" },
+        hs: { title: "HS" },
+        pi: { title: "PI" },
+        migration: { title: "マイグレ" },
+        st_total: { title: "スマタブ総販" },
+        dcard_regu: { title: "レギュラー" },
+        dcard_gold: { title: "ゴールド" },
+        hikari_shinki: { title: "光新規" },
+        hikari_henko: { title: "事業者変更" },
+        hikari_tenyo: { title: "転用" },
+        isp: { title: "OCN" },
+        tvop: { title: "TVOP" },
+        skp_cs: { title: "スカパー顧客" },
+        skp_ic: { title: "スカパーIC" },
+        skp_koji: { title: "スカパー工事" },
       };
 
       // データ
@@ -296,8 +184,12 @@ export default {
     },
   },
   created() {
+    this.$store.dispatch('getRepoData', {career_type: "docomo"})
     this.getReportData();
   },
+    beforeDestroy() {
+    this.$store.commit('resetRepoData', {career_type: "docomo"})
+  }
 };
 </script>
 
@@ -319,3 +211,7 @@ th > span {
   font-size: 8px;
 }
 </style>
+
+
+
+

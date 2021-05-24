@@ -20,13 +20,11 @@
         :fixed-header="true"
         @on-row-click="onRowClick"
         @on-sort-change="onSortChange"
-        @on-search="onSearch"
         :search-options="{
           enabled: true,
           trigger: '',
           skipDiacritics: true,
           placeholder: 'Search this table',
-          externalQuery: searchQuery,
         }"
         :sort-options="{
           enabled: true,

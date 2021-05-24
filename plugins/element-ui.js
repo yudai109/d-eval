@@ -17,9 +17,11 @@ import 'vue-select/dist/vue-select.css';
     import 'vue-good-table/dist/vue-good-table.css'
     
 // vueCtkDateTimePicker
-
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker'
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css'
 
 Vue.use(ElementUI, { locale })
     .use(VueGoodTablePlugin)
     .component('v-select', vSelect)
     .component('vue-json-to-csv', VueJsonToCsv)
+    .component('VueCtkDateTimePicker', VueCtkDateTimePicker)

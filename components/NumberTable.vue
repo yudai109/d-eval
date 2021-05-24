@@ -228,7 +228,6 @@ export default {
             skp_cs_kojin: 0,
             skp_ic_kojin: 0,
             sj_kouji_kojin: 0,
-            kojin_data: [],
         }
     },
     methods: {

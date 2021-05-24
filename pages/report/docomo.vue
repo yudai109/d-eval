@@ -15,7 +15,7 @@
 
         <div class="mb-4">
             <label class="label">稼動店舗 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
-            <v-select name="hoge" :options="shops" v-model="selected" ></v-select>
+            <v-select name="hoge" :options="shops" v-model="shop" ></v-select>
         </div>
 
         <div class="mb-4">
@@ -49,13 +49,28 @@
         </div>
 
         <div class="mb-4">
-            <label class="label">ｄカード獲得数 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
-            <input v-model="dcard" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+            <label class="label">ｄカードレギュラー獲得数 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="dcard_regu" type="number" name="name" class="border rounded-lg p-2 w-11/12">
         </div>
 
         <div class="mb-4">
-            <label class="label">ドコモ光獲得数 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
-            <input v-model="hikari" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+            <label class="label">ｄカードゴールド獲得数 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="dcard_gold" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+        </div>
+
+        <div class="mb-4">
+            <label class="label">光新規 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="hikari_shinki" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+        </div>
+
+        <div class="mb-4">
+            <label class="label">光_事業者変更 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="hikari_henko" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+        </div>
+
+        <div class="mb-4">
+            <label class="label">光_転用 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="hikari_tenyo" type="number" name="name" class="border rounded-lg p-2 w-11/12">
         </div>
 
         <div class="mb-4">
@@ -75,7 +90,12 @@
 
         <div class="mb-4">
             <label class="label">SKP - IC獲得数 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
-            <input v-model="skp_pi" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+            <input v-model="skp_ic" type="number" name="name" class="border rounded-lg p-2 w-11/12">
+        </div>
+
+        <div class="mb-4">
+            <label class="label">SKP - 工事数 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="skp_koji" type="number" name="name" class="border rounded-lg p-2 w-11/12">
         </div>
         <div class="my-3">
             <button @click.once="PushNipo" class="btn bg-yellow-500 font-bold py-2 my-3 rounded-2xl" id="Round">送信</button>
@@ -92,20 +112,24 @@ export default {
     layout: 'default',
     data() {
         return{
-            username: '',
+            username: this.$store.state.username,
             negotiation: 0,
             customer: 0,
             hs: 0,
             pi: 0,
             migration: 0,
             st_total: 0,
-            dcard: 0,
-            hikari: 0,
+            dcard_regu: 0,
+            dcard_cold: 0,
+            hikari_shinki: 0,
+            hikari_henko: 0,
+            hikari_tenyo: 0,
             isp: 0,
             tvop: 0,
             skp_cs: 0,
-            skp_pi: 0,
-            selected: "",
+            skp_ic: 0,
+            skp_koji: 0,
+            shop: "",
             shops: [
 
             ],
@@ -120,20 +144,24 @@ export default {
 
             usersNipoCol.add({
                 createdAt: firestore.FieldValue.serverTimestamp(),
-                name: Number(self.username),
-                shop: Number(self.selected),
+                username: self.username,
+                shop: self.shop,
                 negotiation: Number(self.negotiation),
                 customer: Number(self.customer),
                 hs: Number(self.hs),
                 pi: Number(self.pi),
                 migration: Number(self.migration),
                 st_total: Number(self.st_total),
-                dcard: Number(self.dcard),
-                hikari: Number(self.hikari),
+                dcard_regu: Number(self.dcard_regu),
+                dcard_gold: Number(self.dcard_gold),
+                hikari_shinki: Number(self.hikari_shinki),
+                hikari_henko: Number(self.hikari_henko),
+                hikari_tenyo: Number(self.hikari_tenyo),
                 isp: Number(self.isp),
                 tvop: Number(self.tvop),
                 skp_cs: Number(self.skp_cs),
-                skp_pi: Number(self.skp_pi),
+                skp_ic: Number(self.skp_ic),
+                skp_koji: Number(self.skp_koji),
             })
             .then(function() {
                 // // Performanceのインクリメント
@@ -156,30 +184,37 @@ export default {
                                 pi: firestore.FieldValue.increment(Number(self.pi)),
                                 migration: firestore.FieldValue.increment(Number(self.migration)),
                                 st_total: firestore.FieldValue.increment(Number(self.st_total)),
-                                dcard: firestore.FieldValue.increment(Number(self.dcard)),
-                                hikari: firestore.FieldValue.increment(Number(self.hikari)),
+                                dcard_regu: firestore.FieldValue.increment(Number(self.dcard_regu)),
+                                dcard_gold: firestore.FieldValue.increment(Number(self.dcard_gold)),
+                                hikari_shinki: firestore.FieldValue.increment(Number(self.hikari_shinki)),
+                                hikari_henko: firestore.FieldValue.increment(Number(self.hikari_henko)),
+                                hikari_tenyo: firestore.FieldValue.increment(Number(self.hikari_tenyo)),
                                 isp: firestore.FieldValue.increment(Number(self.isp)),
                                 tvop: firestore.FieldValue.increment(Number(self.tvop)),
                                 skp_cs: firestore.FieldValue.increment(Number(self.skp_cs)),
-                                skp_pi: firestore.FieldValue.increment(Number(self.skp_pi)),
+                                skp_ic: firestore.FieldValue.increment(Number(self.skp_ic)),
+                                skp_koji: firestore.FieldValue.increment(Number(self.skp_koji)),
                             },  {merge: true})
                             })
                             .then(() => {
                                 alert('送信しました')
                                 self.username = ''
-                                self.selected = ''
+                                self.shop = ''
                                 self.negotiation = 0
                                 self.customer = 0
                                 self.hs = 0
                                 self.pi = 0
                                 self.migration = 0
                                 self.st_total = 0
-                                self.dcard = 0
-                                self.hikari = 0
+                                self.dcard_regu = 0
+                                self.hikari_shinki = 0
+                                self.hikari_henko = 0
+                                self.hikari_tenyo = 0
                                 self.isp = 0
                                 self.tvop = 0
                                 self.skp_cs = 0
-                                self.skp_pi = 0
+                                self.skp_ic = 0
+                                self.skp_koji = 0
                             })
                             .then(() => {
                                 setTimeout(() => {
@@ -216,12 +251,16 @@ export default {
                             pi: 0,
                             migration: 0,
                             st_total: 0,
-                            dcard: 0,
-                            hikari: 0,
+                            dcard_regu: 0,
+                            dcard_gold: 0,
+                            hikari_shinki: 0,
+                            hikari_henko: 0,
+                            hikari_tenyo: 0,
                             isp: 0,
                             tvop: 0,
                             skp_cs: 0,
-                            skp_pi: 0,
+                            skp_ic: 0,
+                            skp_koji: 0,
                         }, {marge: true})
                     } else {
                         console.log('変わってません')

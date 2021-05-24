@@ -228,7 +228,7 @@ export default {
       // });
 
 
-      firestore().collection(`shops`).doc(`${this.edit_data.shop_id}`).update({
+      firestore().collection(`shops`).doc(`${this.edit_data.shop_id}`).set({
         pi: this.edit_data.pi,
         hstab: this.edit_data.hstab,
         migration: this.edit_data.migration,
@@ -245,7 +245,7 @@ export default {
           console.error("Error writing document: ", error);
       });
 
-      firestore().collection(`shops`).doc(`${this.edit_data.shop_id}/${year}_${month}/marks`).update({
+      firestore().collection(`shops`).doc(`${this.edit_data.shop_id}/${year}_${month}/marks`).set({
         pi: this.edit_data.pi,
         hstab: this.edit_data.hstab,
         migration: this.edit_data.migration,
@@ -322,6 +322,9 @@ export default {
       this.json_data = this.rows;
     },
   },
+  // middleware({ store }) {
+  //   store.dispatch('getShopsInfo')
+  // },
   mounted() {
     this.getShopsData()
   },

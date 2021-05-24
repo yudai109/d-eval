@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 text-gray-600">
+  <div class="bg-gray-100 text-gray-600 mb-40">
     <div class="relative bg-green-600 md:pt-32 pb-32 pt-12">
       <div class="px-4 md:px-10 mx-auto w-full">
         <div>
@@ -138,7 +138,7 @@
           <Performance />
         </div>
 
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap mb-60">
           <NumberTable class="w-full xl:w-8/12" />
           <Social class="xl:w-4/12" />
         </div>

@@ -5,7 +5,7 @@
                 <i class="far fa-arrow-alt-circle-left fa-2x text-gray-600"></i>
             </nuxt-link>
         </div>
-        <h1 class="text-3xl pb-2">OCN｜日報報告</h1>
+        <h1 class="text-3xl pb-2">電車</h1>
         <p>稼働終了後に必ず報告してください。</p>
         <hr class="my-3">
         <div class="mb-4">
@@ -14,31 +14,65 @@
         </div>
 
         <div class="mb-4">
-            <label class="label">店舗名 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
-            <v-select name="shop" :options="shops" v-model="shop" ></v-select>
+            <label class="label text-gray-700">移動手段 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <div class="mt-2 ml-8 text-left">
+                <label class="inline-flex items-center">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="電車">
+                <span class="ml-2">電車</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="車">
+                <span class="ml-2">車</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="その他">
+                <span class="ml-2">その他</span>
+                </label>
+            </div>
+        </div>
+
+
+        <!-- 電車の場合 -->
+        <div class="mb-4">
+            <label class="label text-gray-700">片道/往復 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <div class="mt-2 ml-8 text-left">
+                <label class="inline-flex items-center">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="電車">
+                <span class="ml-2">片道</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="車">
+                <span class="ml-2">往復</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="その他">
+                <span class="ml-2">その他</span>
+                </label>
+            </div>
         </div>
 
         <div class="mb-4">
-            <label class="label">訪問先 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <label class="label">出発地 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
             <input v-model="attend" type="text" name="attend" class="border rounded-lg p-2 w-11/12 ease-linear transition-all duration-150">
         </div>
 
         <div class="mb-4">
-            <label class="label text-gray-700">手段 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
-            <div class="mt-2 ml-8 text-left">
-                <label class="inline-flex items-center">
-                <input  v-model="method" type="radio" class="form-radio" name="type" value="商談">
-                <span class="ml-2">商談</span>
-                </label>
-                <label class="inline-flex items-center ml-6">
-                <input  v-model="method" type="radio" class="form-radio" name="type" value="外販支援">
-                <span class="ml-2">外販支援</span>
-                </label>
-                <label class="inline-flex items-center ml-6">
-                <input  v-model="method" type="radio" class="form-radio" name="type" value="コンサルタント">
-                <span class="ml-2">コンサルタント</span>
-                </label>
-            </div>
+            <label class="label">目的地 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="attend" type="text" name="attend" class="border rounded-lg p-2 w-11/12 ease-linear transition-all duration-150">
+        </div>
+
+
+        <div class="mb-4">
+            <label class="label">金額 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
+            <input v-model="attend" type="text" name="attend" class="border rounded-lg p-2 w-11/12 ease-linear transition-all duration-150">
+        </div>
+
+
+        <!-- 車の場合 -->
+        <h2 class="text-left mx-4 mb-2 pb-1 border-b">車の場合のみ記入</h2>
+        <div class="mb-4">
+            <label class="label">移動距離</label>
+            <input v-model="attend" type="text" name="attend" class="border rounded-lg p-2 w-11/12 ease-linear transition-all duration-150">
         </div>
 
         <div class="mb-4">
@@ -89,13 +123,15 @@ export default {
             impression_repo: '',
             request_repo: '',
             conflict_repo: '',
-            shops: [],
+            shops: [
+
+            ],
         }
     },
     methods: {
         PushNipo: function() {
             var CurrentUser = auth().currentUser;
-            var usersSkpCol = firestore().collection(`users/${CurrentUser.uid}/ocn_repo`)
+            var usersSkpCol = firestore().collection(`users/${CurrentUser.uid}/skp_repo`)
             usersSkpCol.add({
                 createdAt: firestore.FieldValue.serverTimestamp(),
                 date: this.date,

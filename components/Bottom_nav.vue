@@ -17,9 +17,9 @@
                 <i class="fas fa-chart-bar"></i>
             </li>
           </nuxt-link>
-          <nuxt-link to="/test">
+          <nuxt-link to="/employee">
             <li class="pt-3 pb-4 px-6 hover:bg-gray-500">
-                <i class="fas fa-tasks"></i>
+                <i class="fas fa-user-clock"></i>
             </li>
           </nuxt-link>
           <nuxt-link to="/account">
@@ -33,7 +33,7 @@
 </template>
 <script>
 export default {
-    
+  name: "Bottom-nav"
 }
 </script>
 <style scoped>

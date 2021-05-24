@@ -29,6 +29,7 @@ export default {
     },
     "~/plugins/firebase.js",
     "~/plugins/firebase.auth.js",
+    "~/plugins/init.js",
     "~/plugins/element-ui.js",
     "~/plugins/vue-modal.js",
   ],
@@ -62,15 +63,14 @@ export default {
       name: "V-VALUE",
       lang: "ja",
       short_name: "V-VAL",
-      title: "v-value",
-      "og:title": "v-value",
       description: "v-value",
-      "og:description": "v-value",
       theme_color: "#ffffff",
       background_color: "#ffffff"
     },
     meta: {
-      theme_color: "#ffffff"
+      theme_color: "#ffffff",
+      mobileAppIOS: true,
+      "og:title": "v-val",
       // appleStatusBarStyle: "black-translucent",
     }
   },

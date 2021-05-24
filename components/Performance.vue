@@ -43,107 +43,131 @@
 
 
 <script>
+import { auth } from '~/plugins/firebase.js'
+import { firestore } from '~/plugins/firebase.js'
+
 export default {
+    data() {
+        return {
+            kojin_data: this.$store.state.kojin_data,
+            pending: false,
+        }
+    },
+    beforeCreate() {
+        this.$store.dispatch("setKojinData")
+    },
     mounted() {
-        this.$nextTick(function () {
-        let config = {
-            type: "bar",
-            data: {
-            labels: [
-                "PI",
-                "HS/タブ",
-                "マイグレ",
-                "総販",
-                "dカード",
-                "ドコモ光",
-                "ISP付帯",
-                "TVOP付帯",
-                "SKP顧客",
-                "SKPIC",
-            ],
-            datasets: [
-                {
-                label: "店舗達成率",
-                fill: false,
-                backgroundColor: "#F59E0B",
-                borderColor: "#F59E0B",
-                data: [30, 78, 56, 34, 100, 45, 13, 20, 20, 30],
-                barThickness: 15,
-                },
-                {
-                label: "個人達成率",
-                fill: false,
-                backgroundColor: "#3B82F6",
-                borderColor: "#3B82F6",
-                data: [this.pi_rate, 68, 86, 74, 10, 4, 87, 40, 30, 60],
-                barThickness: 15,
-                },
-            ],
-            },
-            options: {
-            maintainAspectRatio: false,
-            responsive: true,
-            title: {
-                display: false,
-                text: "Orders Chart",
-            },
-            tooltips: {
-                mode: "index",
-                intersect: false,
-            },
-            hover: {
-                mode: "nearest",
-                intersect: true,
-            },
-            legend: {
-                labels: {
-                fontColor: "rgba(0,0,0,.4)",
-                },
-                align: "end",
-                position: "bottom",
-            },
-            scales: {
-                xAxes: [
-                {
-                    display: true,
-                    scaleLabel: {
-                    display: true,
+        setTimeout(() => {
+            // if(this.pending) {
+                this.$nextTick(() =>  {
+                let config = {
+                    type: "bar",
+                    data: {
+                    labels: [
+                        "PI",
+                        "HS/タブ",
+                        "マイグレ",
+                        "総販",
+                        "dカード",
+                        "ドコモ光",
+                        "ISP付帯",
+                        "TVOP付帯",
+                        "SKP顧客",
+                        "SKPIC",
+                    ],
+                    datasets: [
+                        {
+                        label: "店舗達成率",
+                        fill: false,
+                        backgroundColor: "#F59E0B",
+                        borderColor: "#F59E0B",
+                        // data: [
+                        //     this.kojin_data.hs_kojin,
+                        //     this.kojin_data.pi_kojin,
+                        //     56, 34, 100, 45, 13, 20, 20, 30],
+                        data: this.kojin_data,
+                        barThickness: 15,
+                        },
+                        {
+                        label: "個人達成率",
+                        fill: false,
+                        backgroundColor: "#3B82F6",
+                        borderColor: "#3B82F6",
+                        data: [40, 68, 86, 74, 10, 4, 87, 40, 30, 60],
+                        barThickness: 15,
+                        },
+                    ],
                     },
-                    gridLines: {
-                    borderDash: [2],
-                    borderDashOffset: [2],
-                    color: "rgba(33, 37, 41, 0.3)",
-                    zeroLineColor: "rgba(33, 37, 41, 0.3)",
-                    zeroLineBorderDash: [2],
-                    zeroLineBorderDashOffset: [2],
+                    options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    title: {
+                        display: false,
+                        text: "Orders Chart",
                     },
+                    tooltips: {
+                        mode: "index",
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: "nearest",
+                        intersect: true,
+                    },
+                    legend: {
+                        labels: {
+                        fontColor: "rgba(0,0,0,.4)",
+                        },
+                        align: "end",
+                        position: "bottom",
+                    },
+                    scales: {
+                        xAxes: [
+                        {
+                            display: true,
+                            scaleLabel: {
+                            display: true,
+                            },
+                            gridLines: {
+                            borderDash: [2],
+                            borderDashOffset: [2],
+                            color: "rgba(33, 37, 41, 0.3)",
+                            zeroLineColor: "rgba(33, 37, 41, 0.3)",
+                            zeroLineBorderDash: [2],
+                            zeroLineBorderDashOffset: [2],
+                            },
+                        },
+                        ],
+                        yAxes: [
+                        {
+                            display: true,
+                            scaleLabel: {
+                            display: false,
+                            labelString: "Value",
+                            },
+                            gridLines: {
+                            borderDash: [2],
+                            drawBorder: false,
+                            borderDashOffset: [2],
+                            color: "rgba(33, 37, 41, 0.2)",
+                            zeroLineColor: "rgba(33, 37, 41, 0.15)",
+                            zeroLineBorderDash: [2],
+                            zeroLineBorderDashOffset: [2],
+                            },
+                        },
+                    ],
                 },
-                ],
-                yAxes: [
-                {
-                    display: true,
-                    scaleLabel: {
-                    display: false,
-                    labelString: "Value",
-                    },
-                    gridLines: {
-                    borderDash: [2],
-                    drawBorder: false,
-                    borderDashOffset: [2],
-                    color: "rgba(33, 37, 41, 0.2)",
-                    zeroLineColor: "rgba(33, 37, 41, 0.15)",
-                    zeroLineBorderDash: [2],
-                    zeroLineBorderDashOffset: [2],
-                    },
-                },
-                ],
-            },
             },
         };
         let ctx = document.getElementById("bar-chart").getContext("2d");
         window.myBar = new Chart(ctx, config);
         });
-    }
+
+        console.log("jikkou")
+            // }
+        }, 500);
+        // データ作成
+
+    },
 };
 </script>
 

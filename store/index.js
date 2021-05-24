@@ -8,106 +8,16 @@ export const state = () => ({
   user: null,
   username: "",
   useremail: "",
-  shops: [
-    // { shop_id: "kumiyama", company: "ティーガイア", shopname: "久御山店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "nishi_otsu", company: "滋賀テレコム", shopname: "西大津店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "katata", company: "滋賀テレコム", shopname: "堅田店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "shiga_takatsuki", company: "滋賀テレコム", shopname: "滋賀高月店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "imazu", company: "滋賀テレコム", shopname: "今津店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kouga", company: "滋賀テレコム", shopname: "甲賀店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "yasukumogawa", company: "滋賀テレコム", shopname: "安曇川店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ojikoen", company: "ズーム", shopname: "王子公園店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "rokomiti", company: "ITX", shopname: "六甲道店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "nishiakashi", company: "ティーガイア", shopname: "西明石店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "mikage_kurasse", company: "ティーガイア", shopname: "御影クラッセ店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "nishinomiya_kurakake", company: "ITX", shopname: "西宮鞍掛店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kamikoshien", company: "エムエスケイ", shopname: "上甲子園店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "miki", company: "エムエスケイ", shopname: "三木店（兵庫県）", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "myodani", company: "エムエスケイ", shopname: "名谷店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "hankyu_itami", company: "エムエスケイ", shopname: "阪急伊丹店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "miki_shijimi", company: "ミツワ", shopname: "三木志染店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "takaraduka", company: "ミツワ", shopname: "宝塚店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kawanishi", company: "ミツワ", shopname: "川西店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kawanishi_tada", company: "ミツワ", shopname: "川西多田店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "shin_sanda", company: "ITX", shopname: "新三田店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "sanda_udi_town", company: "ITX", shopname: "三田ウッディタウン店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "okaba", company: "ITX", shopname: "岡場店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "suzurandai", company: "ITX", shopname: "すずらん台店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ion_mol_kobekita", company: "ITX", shopname: "イオンモール神戸北店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "futami", company: "ティーガイア", shopname: "二見店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kobe_haber_land", company: "ティーガイア", shopname: "神戸ハーバーランドｕｍｉｅ店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "akashi", company: "ニッソウ", shopname: "明石店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "minami_awaji", company: "番所自動車工業", shopname: "南あわじ店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "awaji", company: "番所自動車工業", shopname: "淡路店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "sumoto", company: "番所自動車工業", shopname: "洲本店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "suita", company: "エリアマーケティングオフィス", shopname: "吹田店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // {
-    //   shop_id: "higashi_umeda", company: "ティーガイア",
-    //   shopname: "東梅田店（ｄ ｇａｒｄｅｎ東梅田店）",
-    //   pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0
-    // },
-    // { shop_id: "mino", company: "マイム", shopname: "箕面店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "temkom_bashi", company: "コネクシオ", shopname: "天神橋店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "esaka", company: "ティーガイア", shopname: "江坂店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ibaraki_shinjo", company: "エリアマーケティングオフィス", shopname: "茨木新庄店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ibaraki_ayukawa", company: "エリアマーケティングオフィス", shopname: "茨木鮎川店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "toyonaka", company: "コネクシオ", shopname: "豊中店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "nishinakajima", company: "コネクシオ", shopname: "西中島店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "fukae_bashi", company: "コネクシオ", shopname: "深江橋店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kyobashi", company: "コネクシオ", shopname: "京橋店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ibaraki_R171", company: "コネクシオ", shopname: "茨木Ｒ１７１店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "noda_hanashin", company: "コネクシオ", shopname: "野田阪神店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "yao_minami", company: "コネクシオ", shopname: "八尾南店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "yao_taishido", company: "コネクシオ", shopname: "八尾太子堂店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "yao_shiyakusyomae", company: "コネクシオ", shopname: "八尾市役所前店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "fujii_dera", company: "コネクシオ", shopname: "藤井寺店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "matubara", company: "コネクシオ", shopname: "松原店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kisiwada_26gousen", company: "ＴＲ・ＣＯＭ", shopname: "岸和田２６号線店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ario_yao", company: "ティーガイア", shopname: "アリオ八尾店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "izumi_oka", company: "スマートバリュー", shopname: "泉ケ丘店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "koumyo_ike", company: "スマートバリュー", shopname: "光明池店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kishiwada", company: "スマートバリュー", shopname: "岸和田店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "nakamozu", company: "スマートバリュー", shopname: "中百舌鳥店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "fukai", company: "スマートバリュー", shopname: "深井店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ario_kaede", company: "スマートバリュー", shopname: "アリオ鳳店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "izumi_tyuo", company: "ダンク", shopname: "和泉中央店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "izumi_otsu", company: "ダンク", shopname: "泉大津駅前店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kongo", company: "兼松コミュニケーションズ", shopname: "金剛店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kadoma", company: "ＴＲ・ＣＯＭ", shopname: "門真店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "neyagawa", company: "コネクシオ", shopname: "寝屋川店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kiri_uriwari", company: "タイホー通信工業", shopname: "喜連瓜破店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "namba_midosuji", company: "ティーガイア", shopname: "なんば御堂筋店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "uemhonmachi", company: "ティーガイア", shopname: "上本町店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "dainichi", company: "ティーガイア", shopname: "大日店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "daito_minami", company: "ティーガイア", shopname: "大東南店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kosaka", company: "ティーガイア", shopname: "小阪店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "ion_dainichi", company: "ITX", shopname: "イオンモール大日店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "biba_neyagawa", company: "兼松コミュニケーションズ", shopname: "ビバモール寝屋川店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "abeno_Qs_mall", company: "コネクシオ", shopname: "あべのキューズモール店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "hirakata_shodai", company: "コネクシオ", shopname: "枚方招提店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kuzuha_ekimae", company: "コネクシオ", shopname: "樟葉駅前店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "yodoyabashi", company: "ティーガイア", shopname: "淀屋橋店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "daito", company: "ドコモＣＳ", shopname: "大東店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "himeji_nishi", company: "光栄自動車整備", shopname: "姫路西店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "takasago", company: "光栄自動車整備", shopname: "高砂店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "himeji_tujii", company: "光栄自動車整備", shopname: "姫路辻井店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kakogawa_meiki", company: "光栄自動車整備", shopname: "加古川明姫店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "kakogawa", company: "光栄自動車整備", shopname: "加古川店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "wadayama", company: "光栄自動車整備", shopname: "和田山店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "toyoka", company: "光栄自動車整備", shopname: "豊岡店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "hamasaka", company: "光栄自動車整備", shopname: "浜坂店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "nankai_shieki", company: "サイバーリンクス", shopname: "南海市駅前店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "tanabe", company: "サイバーリンクス", shopname: "田辺店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "hashimoto", company: "サイバーリンクス", shopname: "橋本店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "hashimoto_ayanodai", company: "サイバーリンクス", shopname: "橋本彩の台店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "iwade", company: "サイバーリンクス", shopname: "岩出店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "katuragi", company: "サイバーリンクス", shopname: "かつらぎ店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "jr_wakayamaeki", company: "サイバーリンクス", shopname: "ＪＲ和歌山駅前店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 },
-    // { shop_id: "tanabe_shinjo", company: "レイドック", shopname: "田辺新庄店", pi: 0, hstab:0, migration: 0 ,smtab: 0, dcard_gold:0, dcard_regu:0, hikari_shinki:0, hikari_tenyo:0, hikari_henko:0 }
-  ],
+  shops: [],
   skp_data: [],
-  reports: [],
-  rows: []
+  docomo_reports: [],
+  skp_reports: [],
+  ocn_reports: [],
+  trans_reports: [],
+  clock_reports: [],
+  rows: [],
+  kojin_data: [],
+  shop_data: [],
 });
 
 // --------------------
@@ -131,11 +41,54 @@ export const mutations = {
       state.shops.push(data);
     });
   },
-  setReportData(state, repo_datas) {
-    repo_datas.forEach(repo_data => {
-      state.reports.push(repo_data);
-    });
+  addTransData(state, add_trans_reports) {
+    state.trans_reports.push(add_trans_reports);
   },
+  setReportData(state, { repo_datas, career_type }) {
+    if (career_type === "skp") {
+      repo_datas.forEach(repo_data => {
+        state.skp_reports.push(repo_data);
+      });
+    } else if (career_type === "ocn") {
+      repo_datas.forEach(repo_data => {
+        state.ocn_reports.push(repo_data);
+      });
+    } else if (career_type === "docomo") {
+      repo_datas.forEach(repo_data => {
+        state.docomo_reports.push(repo_data);
+      });
+    } else if (career_type === "trans") {
+      repo_datas.forEach(repo_data => {
+        state.trans_reports.push(repo_data);
+      });
+    } else if (career_type === "clock") {
+      repo_datas.forEach(repo_data => {
+        state.clock_reports.push(repo_data);
+      });
+    }
+  },
+
+  setKojinData(state, {kojin_data}) {
+    for (let key in kojin_data) {
+      console.log(kojin_data[key])
+      state.kojin_data.push(kojin_data[key])
+    }
+  },
+
+  resetRepoData(state, { career_type }) {
+    if (career_type === "skp") {
+      state.skp_reports.splice(0);
+    } else if (career_type === "ocn") {
+      state.ocn_reports.splice(0);
+    } else if (career_type === "docomo") {
+      state.docomo_reports.splice(0);
+    } else if (career_type === "trans") {
+      state.trans_reports.splice(0);
+    } else if (career_type === "clock") {
+      state.clock_reports.splice(0);
+    }
+  },
+
   editShopInfo(state, edit_data) {
     var index = state.shops.findIndex(el => el.shopname === edit_data.shopname);
     state.shops[index].pi = edit_data.pi;
@@ -149,18 +102,61 @@ export const mutations = {
     state.shops[index].hikari_henko = edit_data.hikari_henko;
   },
 
-  editRepoData(state, edit_data) {
-    var index = state.reports.findIndex(el => el.doc_id === edit_data.doc_id);
-    console.log(index)
-    state.reports[index].shop = edit_data.shop;
-    state.reports[index].attend = edit_data.attend;
-    state.reports[index].sko_type = edit_data.sko_type;
-    state.reports[index].username = edit_data.username;
-    state.reports[index].activity_repo = edit_data.activity_repo;
-    state.reports[index].impression_repo = edit_data.impression_repo;
-    state.reports[index].request_repo = edit_data.request_repo;
-    state.reports[index].conflict_repo = edit_data.conflict_repo;
-  }
+  editRepoData(state, { edit_data, career_type }) {
+    if (career_type === "skp") {
+      var index = state.skp_reports.findIndex(
+        el => el.doc_id === edit_data.doc_id
+      );
+      console.log(index);
+      state.skp_reports[index].shop = edit_data.shop;
+      state.skp_reports[index].attend = edit_data.attend;
+      state.skp_reports[index].method = edit_data.method;
+      state.skp_reports[index].username = edit_data.username;
+      state.skp_reports[index].activity_repo = edit_data.activity_repo;
+      state.skp_reports[index].impression_repo = edit_data.impression_repo;
+      state.skp_reports[index].request_repo = edit_data.request_repo;
+      state.skp_reports[index].conflict_repo = edit_data.conflict_repo;
+    } else if (career_type === "ocn") {
+      var index = state.ocn_reports.findIndex(
+        el => el.doc_id === edit_data.doc_id
+      );
+      console.log(index);
+      state.ocn_reports[index].shop = edit_data.shop;
+      state.ocn_reports[index].attend = edit_data.attend;
+      state.ocn_reports[index].method = edit_data.method;
+      state.ocn_reports[index].username = edit_data.username;
+      state.ocn_reports[index].activity_repo = edit_data.activity_repo;
+      state.ocn_reports[index].impression_repo = edit_data.impression_repo;
+      state.ocn_reports[index].request_repo = edit_data.request_repo;
+      state.ocn_reports[index].conflict_repo = edit_data.conflict_repo;
+    } else if (career_type === "clock") {
+      var index = state.clock_reports.findIndex(
+        el => el.doc_id === edit_data.doc_id
+      );
+      console.log(index);
+      var date = new Date(edit_data.createdAt)
+      var month = date.getMonth() + 1;
+      var date_ = date.getDate();
+      var hour = date.getHours();
+      var min = date.getMinutes();
+      var sec = date.getSeconds();
+      state.clock_reports[index].createdAt = `${month}月${date_}日 ${hour}:${min}:${sec}`;
+    }
+  },
+
+  editTransData(state, {edit_data}) {
+    var index = state.trans_reports.findIndex(el => el.shopname === edit_data.shopname);
+    state.trans_reports[index].date = edit_data.date;
+    state.trans_reports[index].shop = edit_data.shop;
+    state.trans_reports[index].useremail = edit_data.useremail;
+    state.trans_reports[index].start_place = edit_data.start_place;
+    state.trans_reports[index].end_place = edit_data.end_place;
+    state.trans_reports[index].transportation = edit_data.transportation;
+    state.trans_reports[index].charge = edit_data.charge;
+    state.trans_reports[index].car_dist = edit_data.car_dist;
+    state.trans_reports[index].etc_charge = edit_data.etc_charge;
+    state.trans_reports[index].note = edit_data.note;
+  },
 };
 
 // --------------------
@@ -168,39 +164,154 @@ export const mutations = {
 // --------------------
 export const actions = {
   // 個人レポート情報
-  getSkpRepoData() {
+  getRepoData({ commit }, { career_type }) {
     var today = new Date();
     var year = today.getFullYear();
     var month = today.getMonth() + 1;
 
     var self = this;
-    var current_user = auth().currentUser;
-    var skp_repo_col = firestore().collection(
-      `users/${current_user.uid}/skp_repo`
+    var CurrentUser = auth().currentUser;
+    var repo_col = firestore().collection(
+      `users/${CurrentUser.uid}/${career_type}_repo`
     );
     var repo_datas = [];
 
-    skp_repo_col
-      .get()
-      .then(qs => {
-        qs.forEach(doc => {
-          var repo_data = {};
-          repo_data.doc_id = doc.id;
-          repo_data.createdAt = doc.data().createdAt;
-          repo_data.shop = doc.data().shop;
-          repo_data.attend = doc.data().attend;
-          repo_data.skp_type = doc.data().skp_type;
-          repo_data.username = doc.data().username;
-          repo_data.activity_repo = doc.data().activity_repo;
-          repo_data.impression_repo = doc.data().impression_repo;
-          repo_data.request_repo = doc.data().request_repo;
-          repo_data.conflict_repo = doc.data().conflict_repo;
-          repo_datas.push(repo_data);
+    if (career_type == "skp" || career_type == "ocn") {
+      console.log(career_type);
+      repo_col
+        .get()
+        .then(qs => {
+          qs.forEach(doc => {
+            var date = doc.data().createdAt.toDate();
+            var month = date.getMonth() + 1;
+            var date_ = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+
+            var repo_data = {};
+            repo_data.doc_id = doc.id;
+            repo_data.createdAt = `${month}月${date_}日 ${hour}:${min}:${sec}`;
+            repo_data.shop = doc.data().shop;
+            repo_data.attend = doc.data().attend;
+            repo_data.method = doc.data().method;
+            repo_data.username = doc.data().username;
+            repo_data.activity_repo = doc.data().activity_repo;
+            repo_data.impression_repo = doc.data().impression_repo;
+            repo_data.request_repo = doc.data().request_repo;
+            repo_data.conflict_repo = doc.data().conflict_repo;
+            repo_datas.push(repo_data);
+          });
+        })
+        .then(() => {
+          self.commit("setReportData", {
+            repo_datas: repo_datas,
+            career_type: career_type
+          });
         });
-      })
-      .then(() => {
-        self.commit("setReportData", repo_datas);
+    } else if (career_type == "docomo") {
+      console.log(career_type);
+      repo_col
+        .get()
+        .then(qs => {
+          qs.forEach(doc => {
+            var date = doc.data().createdAt.toDate();
+            var month = date.getMonth() + 1;
+            var date_ = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+
+            var repo_data = {};
+            repo_data.doc_id = doc.id;
+            repo_data.createdAt = `${month}月${date_}日 ${hour}時${min}分${sec}秒`;
+            repo_data.username = doc.data().username;
+            repo_data.shop = doc.data().shop;
+            repo_data.negotiation = doc.data().negotiation;
+            repo_data.customer = doc.data().customer;
+            repo_data.hs = doc.data().hs;
+            repo_data.pi = doc.data().pi;
+            repo_data.migration = doc.data().migration;
+            repo_data.st_total = doc.data().st_total;
+            repo_data.dcard_regu = doc.data().dcard_regu;
+            repo_data.dcard_gold = doc.data().dcard_gold;
+            repo_data.hikari_shinki = doc.data().hikari_shinki;
+            repo_data.hikari_henko = doc.data().hikari_henko;
+            repo_data.hikari_tenyo = doc.data().hikari_tenyo;
+            repo_data.isp = doc.data().isp;
+            repo_data.tvop = doc.data().tvop;
+            repo_data.skp_cs = doc.data().skp_cs;
+            repo_data.skp_ic = doc.data().skp_ic;
+            repo_data.skp_koji = doc.data().skp_koji;
+            repo_datas.push(repo_data);
+          });
+        })
+        .then(() => {
+          self.commit("setReportData", {
+            repo_datas: repo_datas,
+            career_type: career_type
+          });
+        });
+    } else if (career_type == "trans") {
+      var TransExpDoc = firestore().collection(
+        `trans_repo/${year}_${month}/${CurrentUser.uid}`
+      );
+      console.log(career_type);
+      TransExpDoc.get()
+        .then(qs => {
+          qs.forEach(doc => {
+            var repo_data = {};
+            repo_data.doc_id = doc.id;
+            repo_data.createdAt = doc.data().createdAt;
+            repo_data.date = doc.data().date;
+            repo_data.useremail = doc.data().useremail;
+            repo_data.shop = doc.data().shop;
+            repo_data.start_place = doc.data().start_place;
+            repo_data.end_place = doc.data().end_place;
+            repo_data.transportation = doc.data().transportation;
+            repo_data.charge = doc.data().charge;
+            repo_data.car_dist = doc.data().car_dist;
+            repo_data.etc_charge = doc.data().etc_charge;
+            repo_data.note = doc.data().note;
+            repo_datas.push(repo_data);
+          });
+        })
+        .then(() => {
+          self.commit("setReportData", {
+            repo_datas: repo_datas,
+            career_type: career_type
+          });
+        });
+    } else if (career_type == "clock") {
+      var ClockCol = firestore().collection(
+        `users/${CurrentUser.uid}/ClockInOut`
+      );
+      ClockCol.get()
+        .then(qs => {
+          qs.forEach(doc => {
+            var date = doc.data().createdAt.toDate();
+            var month = date.getMonth() + 1;
+            var date_ = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+
+            var repo_data = {};
+            repo_data.doc_id = doc.id;
+            repo_data.createdAt = `${month}月${date_}日 ${hour}:${min}:${sec}`;
+            repo_data.latitude = doc.data().latitude;
+            repo_data.longtitude = doc.data().longtitude;
+            repo_data.status = doc.data().status;
+            repo_datas.push(repo_data);
+          });
+        })
+        .then(() => {
+          self.commit("setReportData", {
+            repo_datas: repo_datas,
+            career_type: career_type
+          });
       });
+    }
   },
 
   // 全ショップ情報
@@ -219,7 +330,8 @@ export const actions = {
         qs.forEach(doc => {
           var shops_data = {};
           var MarksDoc = firestore().doc(
-            `shops/${doc.id}/${year}_${month}/marks`
+            // `shops/${doc.id}/${year}_${month}/marks`
+            `shops/${doc.id}/${year}_4/marks`
           );
           MarksDoc.get().then(el => {
             shops_data.shop_id = el.data().shop_id;
@@ -261,7 +373,6 @@ export const actions = {
     var UserDoc = firestore().doc(`users/${CurrentUser.uid}`);
 
     UserDoc.get().then(function(doc) {
-      console.log(doc.data().username);
       var username = doc.data().username;
       var usermail = doc.data().email;
 
@@ -294,7 +405,95 @@ export const actions = {
     });
 
     await self.commit("skpSetData", result_array);
-  }
+  },
+
+  addTransData({ commit }, { trans_data }) {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+
+    var self = this;
+    var CurrentUser = auth().currentUser;
+    var TransExpCol = firestore().collection(
+      `trans_repo/${year}_${month}/${CurrentUser.uid}`
+    );
+
+    TransExpCol.add({
+      createdAt: trans_data.createdAt,
+      date: trans_data.date,
+      shop: trans_data.shop,
+      useremail: trans_data.useremail,
+      start_place: trans_data.start_place,
+      end_place: trans_data.end_place,
+      transportation: trans_data.transportation,
+      charge: trans_data.charge,
+      car_dist: trans_data.car_dist,
+      etc_charge: trans_data.etc_charge,
+      note: trans_data.note
+    }).then(() => {
+      self.commit("addTransData", trans_data);
+    });
+  },
+
+  editTransData({ commit }, { trans_data }) {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    
+    var self = this;
+    var CurrentUser = auth().currentUser;
+    var EditDoc = firestore().doc(
+      `trans_repo/${year}_${month}/${CurrentUser.uid}/${trans_data.doc_id}`
+    );
+    EditDoc.update({
+      createdAt: trans_data.createdAt,
+      date: trans_data.date,
+      shop: trans_data.shop,
+      useremail: trans_data.useremail,
+      start_place: trans_data.start_place,
+      end_place: trans_data.end_place,
+      transportation: trans_data.transportation,
+      charge: trans_data.charge,
+      car_dist: trans_data.car_dist,
+      etc_charge: trans_data.etc_charge,
+      note: trans_data.note
+    }).then(() => {
+      self.commit("editTransData", trans_data);
+    });
+  },
+
+  setKojinData: function() {
+    var self = this;
+    var current_user = auth().currentUser;
+    var preformance_col = firestore().collection(`users/${current_user.uid}/Performance`)
+    var kojin_data_brank = {};
+
+    preformance_col.orderBy("createdAt", "desc").limit(1).get().then(qs => {
+      qs.forEach(doc => {
+            kojin_data_brank.negotiation_count =  doc.data().negotiation
+            kojin_data_brank.customer_count =  doc.data().customer
+            kojin_data_brank.hs_kojin =  doc.data().hs_kojin
+            kojin_data_brank.pi_kojin =  doc.data().pi_kojin
+            kojin_data_brank.migration_kojin =  doc.data().migration_kojin
+            kojin_data_brank.st_total_kojin =  doc.data().st_total_kojin
+            kojin_data_brank.dcard_gold_kojin =  doc.data().dcard_gold_kojin
+            kojin_data_brank.dcard_regu_kojin =  doc.data().dcard_regu_kojin
+            kojin_data_brank.hikari_kojin =  doc.data().hikari_kojin
+            kojin_data_brank.hikari_tenyo_kojin =  doc.data().hikari_tenyo_kojin
+            kojin_data_brank.hikari_henko_kojin =  doc.data().hikari_henko_kojin
+            kojin_data_brank.hikari_ocn_kojin =  doc.data().hikari_ocn_kojin
+            kojin_data_brank.tvop_kojin =  doc.data().tvop
+            kojin_data_brank.skp_cs_kojin =  doc.data().skp_cs
+            kojin_data_brank.skp_ic_kojin =  doc.data().skp_ic
+            kojin_data_brank.sj_kouji_kojin =  doc.data().sj_kouji
+        })
+      })
+      .then(() => {
+        self.commit("setKojinData", {
+          kojin_data: kojin_data_brank,
+        })
+      })
+}
 };
 
 export const getters = {

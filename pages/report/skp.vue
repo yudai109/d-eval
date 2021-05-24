@@ -27,15 +27,15 @@
             <label class="label text-gray-700">手段 <span class="bg-red-500 rounded-lg px-2 text-xs text-white">必須</span></label>
             <div class="mt-2 ml-8 text-left">
                 <label class="inline-flex items-center">
-                <input  v-model="skp_type" type="radio" class="form-radio" name="type" value="商談">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="商談">
                 <span class="ml-2">商談</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                <input  v-model="skp_type" type="radio" class="form-radio" name="type" value="外販支援">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="外販支援">
                 <span class="ml-2">外販支援</span>
                 </label>
                 <label class="inline-flex items-center ml-6">
-                <input  v-model="skp_type" type="radio" class="form-radio" name="type" value="コンサルタント">
+                <input  v-model="method" type="radio" class="form-radio" name="type" value="コンサルタント">
                 <span class="ml-2">コンサルタント</span>
                 </label>
             </div>
@@ -83,7 +83,7 @@ export default {
             date: null,
             shop: '',
             attend: '',
-            skp_type: '',
+            method: '',
             username: '',
             activity_repo: '',
             impression_repo: '',
@@ -103,7 +103,7 @@ export default {
                 date: this.date,
                 shop: this.shop,
                 attend: this.attend,
-                skp_type: this.skp_type,
+                method: this.method,
                 username: this.username,
                 activity_repo: this.activity_repo,
                 impression_repo: this.impression_repo,
@@ -114,7 +114,7 @@ export default {
                 alert('送信しました')
                 this.shop = '';
                 this.attend = '';
-                this.skp_type = '';
+                this.method = '';
                 this.username = '';
                 this.activity_repo = '';
                 this.impression_repo = '';

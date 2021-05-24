@@ -1,5 +1,5 @@
 <template>
-    <div class="container bg-gray-100 ml-0 md:">
+    <div class="container bg-gray-100 ml-0">
         <div class="hidden md:block">
             <sidebar-menu :menu="menu" :collapsed="iscollapsed" />
         </div>
@@ -18,43 +18,57 @@ export default {
             iscollapsed: true,
             menu: [
                 {
-                header: true,
-                title: "Main Navigation",
-                hiddenOnCollapse: true,
+                    header: true,
+                    title: "Main Navigation",
+                    hiddenOnCollapse: true,
                 },
                 {
-                href: "/",
-                title: "ダッシュボード",
-                icon: "fa fa-home",
+                    href: "/",
+                    title: "ダッシュボード",
+                    icon: "fa fa-home",
                 },
                 {
-                href: "/report",
-                title: "日報報告",
-                icon: "fa fa-edit",
+                    href: "/report",
+                    title: "日報報告",
+                    icon: "fa fa-edit",
                 },
                 {
-                href: "/analytics",
-                title: "分析",
-                icon: "fa fa-chart-bar",
-                },
-                // {
-                // href: "/test",
-                // title: "理解度テスト",
-                // icon: "fa fa-tasks",
-                // },
-                {
-                href: "/export",
-                title: "スカパーCSV",
-                icon: "fa fa-file-csv",
+                    href: "/analytics",
+                    title: "分析",
+                    icon: "fa fa-chart-bar",
                 },
                 {
-                href: "/shopInfo",
-                title: "ショップ情報",
-                icon: "fa fa-cog",
+                    href: "/export",
+                    title: "スカパーCSV",
+                    icon: "fa fa-file-csv",
+                },
+                {
+                    href: "/shopInfo",
+                    title: "ショップ情報",
+                    icon: "fa fa-store",
+                },
+                {
+                    href: "/employee",
+                    title: "勤怠",
+                    icon: "fa fa-user-clock",
+                    child: [
+                                {
+                                    href: "/employee",
+                                    title: '打刻'
+                                },
+                                {
+                                    href: '/employee/calender',
+                                    title: '出勤簿'
+                                },
+                                {
+                                    href: '',
+                                    title: '申請'
+                                },
+                            ]
                 },
                 {
                 href: "/account",
-                title: "設定",
+                title: "スタッフ設定",
                 icon: "fa fa-cog",
                 },
                 // {
@@ -69,7 +83,7 @@ export default {
 </script>
 
 <style>
-@import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css");
+/* @import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css"); */
 
 .container {
     margin: 0;

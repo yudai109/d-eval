@@ -89,7 +89,7 @@ export default {
                   uid: user.uid,
                   name: "",
                   email: user.email,
-                  status: "退勤中",
+                  status: "退勤",
                   Q_rank: "A",
                   V_rank: "B",
               }).then(() => {
